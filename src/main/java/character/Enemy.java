@@ -1,2 +1,4 @@
-package character;public class Enemy {
+package character;
+
+public class Enemy {
 }
