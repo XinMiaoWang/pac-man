@@ -4,10 +4,9 @@ public class Player extends Character {
     private String state;
     private int HP;
 
-    public Player(String state, int HP, String state1, int HP1) {
+    public Player(String state, int HP, String state) {
         super(state, HP);
-        this.state = state1;
-        this.HP = HP1;
+        this.state = state;
     }
     /**
      *   腳色移動 上下左右
