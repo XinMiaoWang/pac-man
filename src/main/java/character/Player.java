@@ -3,10 +3,8 @@ package character;
 public class Player extends Character {
     private String state;
     private int HP;
-
-    public Player(String state, int HP, String state) {
+    public Player(String state, int HP) {
         super(state, HP);
-        this.state = state;
     }
     /**
      *   腳色移動 上下左右
