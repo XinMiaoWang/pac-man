@@ -13,7 +13,7 @@ public class Player extends Character {
      *   input: left,right,up,down
      *   output:[x,y]
      */
-    @Override
+
     public void move(String dir) {
         if (dir=="right"){
         setxPosition(getxPosition()+1);}

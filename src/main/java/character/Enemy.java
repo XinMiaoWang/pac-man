@@ -5,7 +5,7 @@ public class Enemy extends Character{
         super(state, HP, xPosition, yPosition);
     }
 
-    @Override
+
     public void move(String dir) {
 
     }
