@@ -1,7 +1,8 @@
 package character;
 
 public class Enemy extends Character{
-    public Enemy(String state, int HP,int xPosition, int yPosition) {
+    private String name="Enemy";
+    public Enemy(State state, int HP,int xPosition, int yPosition) {
         super(state, HP, xPosition, yPosition);
     }
 

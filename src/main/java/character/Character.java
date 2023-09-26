@@ -1,19 +1,23 @@
 package character;
 
 public abstract class Character {
-    private String state;
+    private State state;
     private int HP;
 
     private int xPosition;
 
     private int yPosition;
 
+
+
     public int getxPosition() {
         return xPosition;
     }
 
     public void setxPosition(int xPosition) {
+        if (xPosition>0  && xPosition< 200){
         this.xPosition = xPosition;
+        }
     }
 
     public int getyPosition() {
@@ -21,21 +25,23 @@ public abstract class Character {
     }
 
     public void setyPosition(int yPosition) {
+        if (xPosition>0  && xPosition< 100){
         this.yPosition = yPosition;
+        }
     }
 
-    public Character(String state, int HP, int xPosition, int yPosition) {
+    public Character(State state, int HP, int xPosition, int yPosition) {
         this.state = state;
         this.HP = HP;
         this.xPosition = xPosition;
         this.yPosition = yPosition;
     }
 
-    public String getState() {
+    public State getState() {
         return state;
     }
 
-    public void setState(String state) {
+    public void setState(State state) {
         this.state = state;
     }
 
@@ -54,7 +60,7 @@ public abstract class Character {
      */
     public void hpDecrease() {
         if (getHP()==0){
-            changeState("Dead");
+            changeState(State.Dead);
         }
         else {
             setHP(getHP()-1);
@@ -68,15 +74,8 @@ public abstract class Character {
      */
 
 
-    public void collusion() {
-
-    }
-
-
-    public void changeState(String state) {
+    public void changeState(State state) {
         setState(state);
     }
-
-
 
 }
