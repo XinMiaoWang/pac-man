@@ -4,9 +4,31 @@ public abstract class Character {
     private String state;
     private int HP;
 
-    public Character(String state, int HP) {
+    private int xPosition;
+
+    private int yPosition;
+
+    public int getxPosition() {
+        return xPosition;
+    }
+
+    public void setxPosition(int xPosition) {
+        this.xPosition = xPosition;
+    }
+
+    public int getyPosition() {
+        return yPosition;
+    }
+
+    public void setyPosition(int yPosition) {
+        this.yPosition = yPosition;
+    }
+
+    public Character(String state, int HP, int xPosition, int yPosition) {
         this.state = state;
         this.HP = HP;
+        this.xPosition = xPosition;
+        this.yPosition = yPosition;
     }
 
     public String getState() {
@@ -25,7 +47,7 @@ public abstract class Character {
         this.HP = HP;
     }
 
-    public abstract void move();
+    public abstract void move(String dir);
 
     /**
      * input: hp

@@ -1,12 +1,12 @@
 package character;
 
 public class Enemy extends Character{
-    public Enemy(String state, int HP) {
-        super(state, HP);
+    public Enemy(String state, int HP,int xPosition, int yPosition) {
+        super(state, HP, xPosition, yPosition);
     }
 
     @Override
-    public void move() {
+    public void move(String dir) {
 
     }
 }
