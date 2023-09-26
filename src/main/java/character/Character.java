@@ -47,7 +47,6 @@ public abstract class Character {
         this.HP = HP;
     }
 
-    public abstract void move(String dir);
 
     /**
      * input: hp
