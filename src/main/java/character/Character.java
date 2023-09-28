@@ -1,14 +1,21 @@
 package character;
 
+import java.awt.*;
+
 public abstract class Character {
     private State state;
     private int HP;
-
     private int xPosition;
-
     private int yPosition;
+    private int width;
+    private int height;
 
-
+    public Character(State state, int HP, int xPosition, int yPosition) {
+        this.state = state;
+        this.HP = HP;
+        this.xPosition = xPosition;
+        this.yPosition = yPosition;
+    }
 
     public int getxPosition() {
         return xPosition;
@@ -16,7 +23,7 @@ public abstract class Character {
 
     public void setxPosition(int xPosition) {
         if (xPosition>0  && xPosition< 200){
-        this.xPosition = xPosition;
+            this.xPosition = xPosition;
         }
     }
 
@@ -26,16 +33,11 @@ public abstract class Character {
 
     public void setyPosition(int yPosition) {
         if (xPosition>0  && xPosition< 100){
-        this.yPosition = yPosition;
+            this.yPosition = yPosition;
         }
     }
 
-    public Character(State state, int HP, int xPosition, int yPosition) {
-        this.state = state;
-        this.HP = HP;
-        this.xPosition = xPosition;
-        this.yPosition = yPosition;
-    }
+
 
     public State getState() {
         return state;
@@ -53,6 +55,21 @@ public abstract class Character {
         this.HP = HP;
     }
 
+    public int getWidth() {
+        return width;
+    }
+
+    public void setWidth(int width) {
+        this.width = width;
+    }
+
+    public int getHeight() {
+        return height;
+    }
+
+    public void setHeight(int height) {
+        this.height = height;
+    }
 
     /**
      * input: hp
@@ -76,6 +93,18 @@ public abstract class Character {
 
     public void changeState(State state) {
         setState(state);
+    }
+
+    /**
+     *  畫角色
+     *  @param graphics
+     *  @param x : 水平起點
+     *  @param y : 垂直起點
+     *  @param width : 角色寬度
+     *  @param height : 角色高度
+     */
+    public void draw(Graphics graphics, int x, int y, int width, int height) {
+
     }
 
 }
