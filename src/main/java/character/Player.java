@@ -82,4 +82,30 @@ public class Player extends Character {
             setState(State.Super);
         }
     }
+
+    /**
+     * 檢查碰撞
+     * input: [x, y]
+     * output: 如果發生碰撞 true，否則 false
+     */
+    public boolean isCollidingWith(int x, int y) {
+        if( x >= getxPosition() && x <= getxPosition() + getWidth() && y >= getyPosition() &&  y <= y + getHeight())
+            return true;
+
+        return false;
+    }
+
+    /**
+     * 檢查 Enemy 與 Player 是否發生碰撞
+     */
+    public boolean isCollidingWith(Enemy enemy) {
+        // 只要敵人上、下、左、右四個點，其中一個在Player的範圍內就代表發生碰撞
+        if(isCollidingWith(enemy.getxPosition(), enemy.getyPosition()) ||
+                isCollidingWith(enemy.getxPosition() + enemy.getWidth(), enemy.getyPosition()) ||
+                isCollidingWith(enemy.getxPosition(), enemy.getyPosition() + enemy.getHeight()) ||
+                isCollidingWith(enemy.getxPosition() + enemy.getWidth(), enemy.getyPosition() + enemy.getHeight()))
+            return true;
+
+        return false;
+    }
 }
