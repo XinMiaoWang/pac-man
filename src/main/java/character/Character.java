@@ -1,5 +1,8 @@
 package character;
 
+import game.Handler;
+import game.Id;
+
 import java.awt.*;
 
 public abstract class Character {
@@ -10,12 +13,25 @@ public abstract class Character {
     private int width;
     private int height;
 
-    public Character(State state, int HP, int xPosition, int yPosition) {
+    public Id id;
+    public Handler handler;
+
+    public Character(State state, int HP, int xPosition, int yPosition, int width, int height
+                    ,Id id, Handler handler) {
         this.state = state;
         this.HP = HP;
         this.xPosition = xPosition;
         this.yPosition = yPosition;
+        this.width = width;
+        this.height = height;
+        this.id = id;
+        this.handler = handler;
     }
+
+    public abstract void tick(); // for screen update
+    public abstract void render(Graphics g);
+
+    public Id getId(){ return id; }
 
     public int getxPosition() {
         return xPosition;
@@ -76,6 +92,7 @@ public abstract class Character {
      * output:hp--
      */
     public void hpDecrease() {
+        handler.removeEntity(this);
         if (getHP()==0){
             changeState(State.Dead);
         }
